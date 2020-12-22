@@ -2,7 +2,7 @@
 Date: 17/12/2020
 
 ### Project Title
-Bikeshare Project
+Bikeshare Project - Udacity
 
 ### Description
 Using data provided by Motivate (a bike share system provider for many major cities in the United States), this project will compare the system usage between three large cities: Chicago, New York City, and Washington, DC, for the first six months of 2017, and will provide statistics about: popular times of travel, popular stations and trip,  trip duration and users informations.
