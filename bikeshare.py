@@ -22,14 +22,14 @@ def get_filters():
     city = input('Would you like to see data for Chicago, New York City or Washington?\n').lower()
     while city not in {"chicago", "new york city", "washington"}:
         city = input("Sorry!Invalid name, try again, please!\n").lower()
-    
+
     # get user input for month (all, january, february, ... , june)
     filter_month = input("Would like to filter the data by month? (y = yes or n = no)\n")
     if filter_month.lower() == 'y':
         month = input("Which month would you like? (January, February, ..., June)\n")
     else:
         month = 'all'
-        print("Selected all months")
+        print("Selected all 6 months")
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     filter_day = input("Would you like to filter by day of week? (y = yes or n = no)\n")
@@ -38,7 +38,7 @@ def get_filters():
     else:
         day = 'all'
         print("Selected all days of week")
-    
+
     print('-'*40)
     return city, month, day
 
@@ -69,7 +69,7 @@ def load_data(city, month, day):
 
     if day != 'all':
         df = df[df['day'] == day.title()]
-    
+
     return df
 
 
@@ -83,17 +83,17 @@ def time_stats(df):
     popular_month = df['month'].mode()[0]
     popular_month = calendar.month_name[popular_month]
     print('Most Common Month: {}.'.format(popular_month))
-    
+
     # display the most common day of week
     popular_day = df['day'].mode()[0]
     print('Most Common Day of Week: {}.'.format(popular_day))
-    
+
     # display the most common start hour
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print('Most Common Start Hour: {}.'.format(popular_hour))
-            
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -103,20 +103,20 @@ def station_stats(df):
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    
+
     # display most commonly used start station
     start_station = df['Start Station'].mode()[0]
     print('Most Commonly Used Start Station: {}.'.format(start_station))
-    
+
     # display most commonly used end station
     end_station = df['End Station'].mode()[0]
     print('Most Commonly Used End Station: {}.'.format(end_station))
-    
+
     # display most frequent combination of start station and end station trip
     df['combination'] = df['Start Station'] + ' to ' + df['End Station']
     frequent_combination = df['combination'].mode()[0]
     print('Most Frequent combination of Start and End Station: {}.'.format(frequent_combination))
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -157,7 +157,7 @@ def user_stats(df):
         print("Counts by gender:\n {}".format(count_gender))
     else:
         print("Sorry! There is no gender information in the city selected.")
-    
+
     # Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
         earliest = df['Birth Year'].min()
@@ -173,7 +173,7 @@ def user_stats(df):
     print('-'*40)
 
 def raw_data(df):
-    show_raw_data = input("Woul you like to see 5 lines of raw data? (y = yes and n = not)\n").lower()         
+    show_raw_data = input("Woul you like to see 5 lines of raw data? (y = yes and n = not)\n").lower()
     raw_data = 5
     while show_raw_data != 'n':
         print(df.sample(raw_data))
@@ -181,9 +181,9 @@ def raw_data(df):
             show_raw_data = input("Woul you like to see more 5 lines of raw data? (y = yes and n = not)\n").lower()
             raw_data += 5
             break
-            print(df.sample(raw_data))    
-       
-    
+            print(df.sample(raw_data))
+
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -194,7 +194,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         raw_data(df)
-      
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
