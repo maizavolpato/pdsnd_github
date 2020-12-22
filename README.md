@@ -1,15 +1,16 @@
 ### Date created
-Include the date you created this project and README file.
+Date: 17/12/2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+Using data provided by Motivate (a bike share system provider for many major cities in the United States), this project will compare the system usage between three large cities: Chicago, New York City, and Washington, DC, for the first six months of 2017, and will provide statistics about: popular times of travel, popular stations and trip,  trip duration and users informations.
 
 ### Files used
-Include the files used
+chicago.cvs
+new_york_city.cvs
+washington.cvs
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+udacity.com/
