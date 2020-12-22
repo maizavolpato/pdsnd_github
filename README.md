@@ -1,5 +1,5 @@
 ### Date created
-Date: 17/12/2020
+Date: 12/17/2020
 
 ### Project Title
 Bikeshare Project - Udacity
@@ -13,4 +13,11 @@ new_york_city.cvs
 washington.cvs
 
 ### Credits
+<<<<<<< HEAD
 udacity.com/
+||||||| 3ae9a71
+It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+
+=======
+It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+>>>>>>> refactoring
